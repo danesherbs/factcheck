@@ -2,4 +2,4 @@
 
 Search leading academics' opinions on issues.
 
-Powered by [NewsAPI](NewsAPI.org)
+Powered by [NewsAPI](https://www.NewsAPI.org)
