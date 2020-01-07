@@ -1,0 +1,11 @@
+name: fact-check
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.8
+  - pip
+  - pip:
+    - newsapi-python
