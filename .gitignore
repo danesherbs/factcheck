@@ -133,3 +133,4 @@ secrets.py
 
 # IntelliJ
 .idea/
+.DS_Store
