@@ -1,4 +1,4 @@
-# fact-check
+# FactCheck
 
 Search leading academics' opinions on issues.
 
