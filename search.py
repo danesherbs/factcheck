@@ -4,8 +4,7 @@ from secrets import MICROSOFT_ACADEMIC_API_KEY
 
 def get_search_query(query, academics):
     exact_matches = [f"\"{a}\"" for a in academics]
-    academics_or = " OR ".join(exact_matches)
-    return f"{query} AND ({academics_or})"
+    return query + " AND " + " OR ".join(exact_matches)
 
 
 def get_academics(query, count=10):
