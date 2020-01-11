@@ -6,6 +6,6 @@ channels:
 
 dependencies:
   - python=3.8
-  - pip
-  - pip:
-    - newsapi-python
+  - flask
+  - requests
+  - unittest
