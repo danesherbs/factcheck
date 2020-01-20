@@ -31,8 +31,10 @@ def get_child_topics(topic, count=500):
     e.g. get_child_topics('biochemistry')
     """
 
+    topic_normalised = topic.lower()
+
     params = {
-        "expr": f"FN=='{topic}'",
+        "expr": f"FN=='{topic_normalised}'",
         "attributes": "FC.FN",
         "count": count,
     }
@@ -52,8 +54,10 @@ def get_academics(topic):
         Can we sort by number of citations?
     """
 
+    topic_normalised = topic.lower()
+
     params = {
-        "expr": f"Composite(F.FN='{topic}')",
+        "expr": f"Composite(F.FN='{topic_normalised}')",
         "attributes": "AA.AuN",
         "count": 10,
     }
