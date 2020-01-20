@@ -3,7 +3,7 @@
 Search leading academics' opinions on issues. Powered by [Microsoft Academic API](https://www.microsoft.com/en-us/research/project/academic-knowledge/).
 
 <p align="center">
-  <img src="https://i.imgur.com/fXRfpmX.gif">
+  <img src="https://i.imgur.com/ki9yUkV.gif">
 </p>
 
 ## Setup
