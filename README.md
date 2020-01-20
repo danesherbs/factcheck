@@ -8,7 +8,7 @@ Powered by [Microsoft Academic API](https://www.microsoft.com/en-us/research/pro
 
 Create and activate environment
 ```bash
-conda env create --file enviroment.yml
+conda env create --file environment.yml
 conda activate factcheck
 ```
 
