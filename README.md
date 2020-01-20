@@ -8,6 +8,11 @@ Search leading academics' opinions on issues. Powered by [Microsoft Academic API
 
 ## Setup
 
+Subscribe to [Project Academic Knowledge](https://msr-apis.portal.azure-api.net/products/project-academic-knowledge) and update `secrets.py`
+```python
+MICROSOFT_ACADEMIC_API_KEY = "YOUR_KEY"
+```
+
 Create and activate environment
 ```bash
 conda env create --file environment.yml
