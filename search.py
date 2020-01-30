@@ -1,4 +1,5 @@
 import requests
+from functools import lru_cache
 from secrets import MICROSOFT_ACADEMIC_API_KEY
 
 
@@ -26,6 +27,7 @@ def get_top_level_topics(count=100):
     return sorted(topics)
 
 
+@lru_cache(maxsize=30)
 def get_child_topics(topic, count=500):
     """
     e.g. get_child_topics('biochemistry')
