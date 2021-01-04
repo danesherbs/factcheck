@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
+
+<head>
+    <style>
         body {
             text-align: center;
         }
-        </style>
-        <title>FactCheck</title>
-    </head>
+    </style>
+    <title>FactCheck</title>
+</head>
+
+<body
+    style="display: flex; flex-direction: column; align-items:center; justify-content: top; margin: 0; padding: 12vh 0 0 0;">
     <h1>FactCheck</h1>
-    <body>
-        <form method="POST">
-            <select name="topic" style="width: 300px" onchange="this.form.submit()">
-                {% for t in topics.high %}
-                    {% if t==selected.high %}
-                        <option selected>{{ t }}</option>
-                    {% else %}
-                        <option>{{ t }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </form>
-        <form method="POST">
-            <select name="subtopic" style="width: 300px" onchange="this.form.submit()">
-                <option value="" disabled selected>---</option>
-                {% for t in topics.medium %}
-                    {% if t==selected.medium %}
-                        <option selected>{{ t }}</option>
-                    {% else %}
-                        <option>{{ t }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </form>
-        <form method="POST">
-            <select name="subsubtopic" style="width: 300px" onchange="this.form.submit()">
-                <option value="" disabled selected>---</option>
-                {% for t in topics.low %}
-                    {% if t==selected.low %}
-                        <option selected>{{ t }}</option>
-                    {% else %}
-                        <option>{{ t }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </form>
-        <br>
-        <form method="POST">
-            <input type="text" style="width: 340px" name="query">
-            <input type="submit" style="width: 100px" value="Search">
-        </form>
-    </body>
+    FactCheck is like Google, but it only shows you articles mentioning experts.
+    <a href="https://i.imgur.com/cshkfUA.gif">How do I use this?</a>
+
+    <div style="height: 32px;"></div>
+
+    <form method="POST">
+        <select name="topic" style="width: 300px" onchange="this.form.submit()">
+            {% for t in topics.high %}
+            {% if t==selected.high %}
+            <option selected>{{ t }}</option>
+            {% else %}
+            <option>{{ t }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </form>
+    <form method="POST">
+        <select name="subtopic" style="width: 300px" onchange="this.form.submit()">
+            <option value="" disabled selected>---</option>
+            {% for t in topics.medium %}
+            {% if t==selected.medium %}
+            <option selected>{{ t }}</option>
+            {% else %}
+            <option>{{ t }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </form>
+    <form method="POST">
+        <select name="subsubtopic" style="width: 300px" onchange="this.form.submit()">
+            <option value="" disabled selected>---</option>
+            {% for t in topics.low %}
+            {% if t==selected.low %}
+            <option selected>{{ t }}</option>
+            {% else %}
+            <option>{{ t }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </form>
+    <div style="height: 8px;"></div>
+    <form method="POST">
+        <input type="text" style="width: 340px" name="query">
+        <input type="submit" style="width: 100px" value="Search">
+    </form>
+</body>
+
 </html>
