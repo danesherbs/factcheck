@@ -13,61 +13,96 @@
     </script>
 
     <style>
+        html {
+            font-size: 17px;
+        }
+
         body {
+            display: flex;
+            align-items: center;
+            justify-content: top;
+            padding: 12vh 0 0 0;
+            margin: 0;
+        }
+
+        .content {
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+        }
+
+        .content * {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .content input {
+            font-size: 0.8rem;
+        }
+
+        .content select {
+            font-size: 0.8rem;
         }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FactCheck</title>
 </head>
 
-<body
-    style="display: flex; flex-direction: column; align-items:center; justify-content: top; margin: 0; padding: 12vh 0 0 0;">
-    <h1>FactCheck</h1>
-    FactCheck is like Google, but it only shows you articles mentioning experts.
-    <a href="https://i.imgur.com/cshkfUA.gif">How do I use this?</a>
+<body>
+    <div class="content">
+        <h1>FactCheck</h1>
+        <div>FactCheck is like Google, but it only shows you articles mentioning experts. <a
+                href="https://i.imgur.com/cshkfUA.gif">How do I use this?</a></div>
 
-    <div style="height: 32px;"></div>
 
-    <form method="POST">
-        <select name="topic" style="width: 300px" onchange="this.form.submit()">
-            {% for t in topics.high %}
-            {% if t==selected.high %}
-            <option selected>{{ t }}</option>
-            {% else %}
-            <option>{{ t }}</option>
-            {% endif %}
-            {% endfor %}
-        </select>
-    </form>
-    <form method="POST">
-        <select name="subtopic" style="width: 300px" onchange="this.form.submit()">
-            <option value="" disabled selected>---</option>
-            {% for t in topics.medium %}
-            {% if t==selected.medium %}
-            <option selected>{{ t }}</option>
-            {% else %}
-            <option>{{ t }}</option>
-            {% endif %}
-            {% endfor %}
-        </select>
-    </form>
-    <form method="POST">
-        <select name="subsubtopic" style="width: 300px" onchange="this.form.submit()">
-            <option value="" disabled selected>---</option>
-            {% for t in topics.low %}
-            {% if t==selected.low %}
-            <option selected>{{ t }}</option>
-            {% else %}
-            <option>{{ t }}</option>
-            {% endif %}
-            {% endfor %}
-        </select>
-    </form>
-    <div style="height: 8px;"></div>
-    <form method="POST">
-        <input type="text" style="width: 340px" name="query">
-        <input type="submit" style="width: 100px" value="Search">
-    </form>
+        <div style="height: 32px;"></div>
+
+        <form method="POST">
+            <select name="topic" onchange="this.form.submit()">
+                {% for t in topics.high %}
+                {% if t==selected.high %}
+                <option selected>{{ t }}</option>
+                {% else %}
+                <option>{{ t }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </form>
+        <form method="POST">
+            <select name="subtopic" onchange="this.form.submit()">
+                <option value="" disabled selected>---</option>
+                {% for t in topics.medium %}
+                {% if t==selected.medium %}
+                <option selected>{{ t }}</option>
+                {% else %}
+                <option>{{ t }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </form>
+        <form method="POST">
+            <select name="subsubtopic" onchange="this.form.submit()">
+                <option value="" disabled selected>---</option>
+                {% for t in topics.low %}
+                {% if t==selected.low %}
+                <option selected>{{ t }}</option>
+                {% else %}
+                <option>{{ t }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </form>
+        <div style="height: 8px;"></div>
+        <form method="POST">
+            <input type="text" name="query">
+            <div style="height: 4px;"></div>
+            <input type="submit" value="Search">
+        </form>
+    </div>
 </body>
 
 </html>
