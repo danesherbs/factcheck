@@ -1,7 +1,5 @@
 # FactCheck
 
-Try it out here! https://fact-check.herokuapp.com/
-
 FactCheck is like Google, but it only shows you articles mentioning experts. Powered by [Microsoft Academic API](https://www.microsoft.com/en-us/research/project/academic-knowledge/).
 
 <p align="center">
