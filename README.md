@@ -5,6 +5,7 @@ FactCheck is like Google, but it only shows you articles mentioning experts. Pow
 <p align="center">
   <img src="https://i.imgur.com/ki9yUkV.gif">
 </p>
+
 ## Setup
 
 Subscribe to [Project Academic Knowledge](https://msr-apis.portal.azure-api.net/products/project-academic-knowledge) and update `secrets.py`
