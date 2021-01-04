@@ -65,8 +65,18 @@ def get_academics(topic):
     }
 
     payload = query_knowledge_graph(params, "calchistogram")
+    authors = [author["value"] for author in payload["histograms"][0]["histogram"]]
 
-    return [author["value"] for author in payload["histograms"][0]["histogram"]]
+    return [remove_middle_name(author) for author in authors]
+
+
+def remove_middle_name(name):
+    split_names = name.split(" ")
+
+    if len(split_names) == 3:
+        return " ".join([split_names[0], split_names[2]])
+
+    return name
 
 
 def query_knowledge_graph(params, service):
