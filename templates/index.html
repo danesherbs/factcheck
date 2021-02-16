@@ -25,9 +25,35 @@
         <div class="flex flex-col items-center text-center max-w-xs">
             <div class="text-white text-3xl font-bold pt-8 pb-3">FactCheck</div>
             <div class="text-grey-lighter text-sm pb-8">
-                FactCheck is like Google, but it only shows you articles mentioning experts.
-                <a href="https://i.imgur.com/a21Tnpx.mp4" class="text-yellow">How do I use this?</a>
+                Like Google, but it only shows articles mentioning experts.
+                <div class="text-yellow underline inline" id="help-text">How do I use this?</div>
+                <!-- <a href="https://i.imgur.com/a21Tnpx.mp4" class="text-yellow" id="help-text">How do I use this?</a> -->
+                <div id="tooltip" class="hidden bg-white text-left rounded mt-4 p-3 text-grey-darker">
+                    Try selecting:
+                    <ul class="py-2">
+                        <li>Medicine</li>
+                        <li>Virology</li>
+                        <li>Vaccination</li>
+                    </ul>
+
+                    and search "COVID vaccine safety".
+                </div>
             </div>
+
+            <script>
+                window.addEventListener("DOMContentLoaded", () => {
+                    const text = document.querySelector("#help-text");
+                    const tooltip = document.querySelector("#tooltip");
+
+                    text.addEventListener('mouseenter', () => {
+                        tooltip.classList.remove('hidden');
+                    });
+
+                    text.addEventListener('mouseleave', () => {
+                        tooltip.classList.add('hidden');
+                    });
+                })
+            </script>
 
             <form method="POST" class="w-full">
                 <select name="topic" onchange="this.form.submit()" class="rounded bg-white w-full p-1 mb-1">
