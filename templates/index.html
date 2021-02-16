@@ -2,6 +2,10 @@
 <html>
 
 <head>
+    <title>FactCheck</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YB5QNF0YBC"></script>
     <script>
@@ -12,97 +16,60 @@
         gtag('config', 'G-YB5QNF0YBC');
     </script>
 
-    <style>
-        html {
-            font-size: 17px;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: top;
-            padding: 12vh 0 0 0;
-            margin: 0;
-        }
-
-        .content {
-            max-width: 480px;
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            padding: 0 16px;
-        }
-
-        .content * {
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .content input {
-            font-size: 0.8rem;
-        }
-
-        .content select {
-            font-size: 0.8rem;
-        }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
-    user-scalable=0">
-    <title>FactCheck</title>
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="content">
-        <h1>FactCheck</h1>
-        <div>FactCheck is like Google, but it only shows you articles mentioning experts. <a
-                href="https://i.imgur.com/a21Tnpx.mp4">How do I use this?</a></div>
+    <div class="flex flex-col items-center min-h-screen pt-8 font-mono" style="background: #36A2EB">
+        <div class="flex flex-col items-center text-center max-w-xs">
+            <div class="text-white text-3xl font-bold pt-8 pb-3">FactCheck</div>
+            <div class="text-grey-lighter text-sm pb-8">
+                FactCheck is like Google, but it only shows you articles mentioning experts.
+                <a href="https://i.imgur.com/a21Tnpx.mp4" class="text-yellow">How do I use this?</a>
+            </div>
 
-
-        <div style="height: 32px;"></div>
-
-        <form method="POST">
-            <select name="topic" onchange="this.form.submit()">
-                {% for t in topics.high %}
-                {% if t==selected.high %}
-                <option selected>{{ t }}</option>
-                {% else %}
-                <option>{{ t }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-        </form>
-        <form method="POST">
-            <select name="subtopic" onchange="this.form.submit()">
-                <option value="" disabled selected>---</option>
-                {% for t in topics.medium %}
-                {% if t==selected.medium %}
-                <option selected>{{ t }}</option>
-                {% else %}
-                <option>{{ t }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-        </form>
-        <form method="POST">
-            <select name="subsubtopic" onchange="this.form.submit()">
-                <option value="" disabled selected>---</option>
-                {% for t in topics.low %}
-                {% if t==selected.low %}
-                <option selected>{{ t }}</option>
-                {% else %}
-                <option>{{ t }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-        </form>
-        <div style="height: 8px;"></div>
-        <form method="POST">
-            <input type="text" name="query">
-            <div style="height: 4px;"></div>
-            <input type="submit" value="Search">
-        </form>
+            <form method="POST" class="w-full">
+                <select name="topic" onchange="this.form.submit()" class="rounded w-full p-1 mb-1">
+                    {% for t in topics.high %}
+                    {% if t==selected.high %}
+                    <option selected>{{ t }}</option>
+                    {% else %}
+                    <option>{{ t }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </form>
+            <form method="POST" class="w-full">
+                <select name="subtopic" onchange="this.form.submit()" class="rounded w-full p-1 mb-1">
+                    <option value="" disabled selected>---</option>
+                    {% for t in topics.medium %}
+                    {% if t==selected.medium %}
+                    <option selected>{{ t }}</option>
+                    {% else %}
+                    <option>{{ t }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </form>
+            <form method="POST" class="w-full pb-4">
+                <select name="subsubtopic" onchange="this.form.submit()" class="rounded w-full p-1 mb-2">
+                    <option value="" disabled selected>---</option>
+                    {% for t in topics.low %}
+                    {% if t==selected.low %}
+                    <option selected>{{ t }}</option>
+                    {% else %}
+                    <option>{{ t }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </form>
+            <form method="POST" class="w-full">
+                <input type="text" name="query" class="rounded w-full p-2" style="outline: none">
+                <div style="height: 4px;"></div>
+                <input type="submit" value="Search" class="rounded w-full p-2 bg-green text-green-darkest">
+            </form>
+        </div>
     </div>
 </body>
 
