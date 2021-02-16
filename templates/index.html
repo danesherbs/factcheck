@@ -30,7 +30,7 @@
             </div>
 
             <form method="POST" class="w-full">
-                <select name="topic" onchange="this.form.submit()" class="rounded w-full p-1 mb-1">
+                <select name="topic" onchange="this.form.submit()" class="rounded bg-white w-full p-1 mb-1">
                     {% for t in topics.high %}
                     {% if t==selected.high %}
                     <option selected>{{ t }}</option>
@@ -41,7 +41,7 @@
                 </select>
             </form>
             <form method="POST" class="w-full">
-                <select name="subtopic" onchange="this.form.submit()" class="rounded w-full p-1 mb-1">
+                <select name="subtopic" onchange="this.form.submit()" class="rounded bg-white w-full p-1 mb-1">
                     <option value="" disabled selected>---</option>
                     {% for t in topics.medium %}
                     {% if t==selected.medium %}
@@ -53,7 +53,7 @@
                 </select>
             </form>
             <form method="POST" class="w-full pb-4">
-                <select name="subsubtopic" onchange="this.form.submit()" class="rounded w-full p-1 mb-2">
+                <select name="subsubtopic" onchange="this.form.submit()" class="rounded bg-white w-full p-1 mb-2">
                     <option value="" disabled selected>---</option>
                     {% for t in topics.low %}
                     {% if t==selected.low %}
